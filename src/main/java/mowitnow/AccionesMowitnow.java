@@ -40,9 +40,11 @@ public class AccionesMowitnow {
                                       
                 case('R'):
                     cortacesped.rotateRight();
+                    break;
                     
                 case('L'):
                     cortacesped.rotateLeft();
+                    break;
 
                 default:
                     break;
