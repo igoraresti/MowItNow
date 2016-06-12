@@ -10,11 +10,6 @@ import mowitnow.AccionesMowitnow;
 import mowitnow.AppConfig;
 import mowitnow.CortaCesped;
 import mowitnow.Mowitnow;
-import static org.assertj.core.api.Assertions.assertThat;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -40,9 +35,14 @@ public class AccionesCortacespedTest {
         }
         //Bloque examinar acciones
         boolean test = (Cesped_Y_Lista_CortaCesped.getCortacesped().get(0).getPos_x() == 1 &&
-                Cesped_Y_Lista_CortaCesped.getCortacesped().get(0).getPos_y() == 2 &&
+                Cesped_Y_Lista_CortaCesped.getCortacesped().get(0).getPos_y() == 3 &&
                 Cesped_Y_Lista_CortaCesped.getCortacesped().get(0).getOrientation() == 'N');
-        assertThat(test);
-
+        assertEquals(true, test);
+        
+        test = (Cesped_Y_Lista_CortaCesped.getCortacesped().get(1).getPos_x() == 5 &&
+                Cesped_Y_Lista_CortaCesped.getCortacesped().get(1).getPos_y() == 1 &&
+                Cesped_Y_Lista_CortaCesped.getCortacesped().get(1).getOrientation() == 'E');
+        assertEquals(true, test);
     }
+
 }

@@ -12,7 +12,9 @@ import mowitnow.*;
 
 import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.CoreMatchers.is;
+import org.hamcrest.Matcher;
+import static org.junit.Assert.assertEquals;
 
 
 /**
@@ -38,7 +40,7 @@ public class BloqueoBordeCespedTest {
             actions.ejecutaOrdenes(temp, Cesped_Y_Lista_CortaCesped.getCesped());
             test = temp.getOrientation() == 'N' && temp.getPos_x()==1 && temp.getPos_y()==5;
         }
-        assertThat(test);
+        assertEquals(true, test);
     }
     
     @Test
@@ -53,7 +55,7 @@ public class BloqueoBordeCespedTest {
             actions.ejecutaOrdenes(temp, Cesped_Y_Lista_CortaCesped.getCesped());
             test = temp.getOrientation() == 'S' && temp.getPos_x()==1 && temp.getPos_y()==0;
         }
-        assertThat(test);
+        assertEquals(true, test);
     }
     
     @Test
@@ -68,7 +70,7 @@ public class BloqueoBordeCespedTest {
             actions.ejecutaOrdenes(temp, Cesped_Y_Lista_CortaCesped.getCesped());
             test = temp.getOrientation() == 'W' && temp.getPos_x()==0 && temp.getPos_y()==2;
         }
-        assertThat(test);
+        assertEquals(true, test);
     }
     
     @Test
@@ -83,8 +85,10 @@ public class BloqueoBordeCespedTest {
             actions.ejecutaOrdenes(temp, Cesped_Y_Lista_CortaCesped.getCesped());
             test = temp.getOrientation() == 'E' && temp.getPos_x()==5 && temp.getPos_y()==2;
         }
-        assertThat(test);
+        assertEquals(true, test);
     }
+
+    
 
     
 }
