@@ -20,7 +20,7 @@ import static org.junit.Assert.*;
 public class AccionesCortacespedTest {
     
     private static final String absolutePath = new File("").getAbsolutePath();
-    private static final String path_ficheros_config= "/src/main/resources/ficheros_dato/";
+    private static final String path_ficheros_config= "/resources/ficheros_dato/";
     
     @Test
     public void accionesCortacesped() throws IOException {

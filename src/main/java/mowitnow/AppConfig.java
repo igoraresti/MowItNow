@@ -27,14 +27,14 @@ public class AppConfig {
     
     public Mowitnow leeFichero() throws IOException
     {
-        Mowitnow Cesped_Y_Lista_CortaCesped = null;
-        Cesped cesped;
-        List<CortaCesped> lista_cortacesped = new ArrayList<>();
-        CortaCesped cortacesped;
-        String line;
-        String[] datos;
+        Mowitnow mowitnow = null;
         
         try (BufferedReader fichero = new BufferedReader(new FileReader(_path))) {
+            Cesped cesped;
+            List<CortaCesped> lista_cortacesped = new ArrayList<>();
+            CortaCesped cortacesped;
+            String line;
+            String[] datos;
             // Primera linea es el cesped, común para todos los cortacesped
             line = fichero.readLine();
             datos = line.split(" ");
@@ -48,15 +48,14 @@ public class AppConfig {
                 cortacesped = new CortaCesped(Integer.parseInt(datos[0]), Integer.parseInt(datos[1]), datos[2].charAt(0),line);
                 // Secrea añade el cesped a la lista
                 lista_cortacesped.add(cortacesped);
-                
             }
-            Cesped_Y_Lista_CortaCesped= new Mowitnow(cesped,lista_cortacesped);
+            mowitnow= new Mowitnow(cesped,lista_cortacesped);
             
         }catch(IOException ex){
             System.out.println(ex.getMessage());
         }
         
-        return Cesped_Y_Lista_CortaCesped;
+        return mowitnow;
     }
   
     

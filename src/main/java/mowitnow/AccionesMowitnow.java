@@ -14,7 +14,7 @@ public class AccionesMowitnow {
     
     public void muestraDatos(CortaCesped cortaCesped)
     {
-        System.out.println("Pos y orientacion: "+cortaCesped.getPos_x()+" "+ cortaCesped.getPos_y() +" "+ cortaCesped.getOrientation());
+        
     }
     
     public void ejecutaOrdenes(CortaCesped cortacesped, Cesped cesped){

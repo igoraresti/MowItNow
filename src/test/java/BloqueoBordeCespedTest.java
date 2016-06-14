@@ -4,16 +4,15 @@
  * and open the template in the editor.
  */
 
+import mowitnow.AccionesMowitnow;
+import mowitnow.AppConfig;
+import mowitnow.CortaCesped;
+import mowitnow.Mowitnow;
+import org.junit.Test;
+
 import java.io.File;
 import java.io.IOException;
-import mowitnow.*;
 
-
-
-import org.junit.Test;
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.hamcrest.CoreMatchers.is;
-import org.hamcrest.Matcher;
 import static org.junit.Assert.assertEquals;
 
 
@@ -24,7 +23,7 @@ import static org.junit.Assert.assertEquals;
 public class BloqueoBordeCespedTest {
     
     private static String absolutePath = new File("").getAbsolutePath();
-    private static String path_ficheros_config= "/src/main/resources/ficheros_dato/";
+    private static String path_ficheros_config= "/resources/ficheros_dato/";
     
     
     @Test

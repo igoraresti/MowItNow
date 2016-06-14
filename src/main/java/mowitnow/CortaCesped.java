@@ -99,6 +99,11 @@ public class CortaCesped {
     public void setOrdenes(String ordenes) {
         this.ordenes = ordenes;
     }
+
+    @Override
+    public String toString() {
+        return "CortaCesped " + "pos_x=" + pos_x + ", pos_y=" + pos_y + ", orientation=" + orientation;
+    }
     
     
     
