@@ -1,35 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mowitnow;
 
-import java.io.File;
-import java.io.IOException;
+import mowitnow.application.SimulationService;
 
-/**
- *
- * @author igor aresti
- */
+import java.io.IOException;
+import java.util.List;
+
 public class App {
     
-    private static final String absolutePath = new File("").getAbsolutePath();
-    private static final String path_ficheros_config= "/src/test/resources/ficheros_dato/";
+    private static final String PATH_FICHEROS_CONFIG = "src/test/resources/ficheros_dato/";
     
-    public static void main(String[] args) throws IOException{
-        
-        AppConfig fichero = new AppConfig(absolutePath+path_ficheros_config+"cesped");
-        Mowitnow Cesped_Y_Lista_CortaCesped = fichero.leeFichero();
-        AccionesMowitnow actions = new AccionesMowitnow();
-        
-        for(CortaCesped cortacesped : Cesped_Y_Lista_CortaCesped.getCortacesped()){
-            actions.ejecutaOrdenes(cortacesped, Cesped_Y_Lista_CortaCesped.getCesped());
-            System.out.println(cortacesped);
-            System.out.println("");
+    public static void main(String[] args) {
+        String fileName = "cesped";
+        if (args.length > 0) {
+            fileName = args[0];
         }
-                
+
+        SimulationService simulationService = new SimulationService();
+        try {
+            List<String> results = simulationService.runSimulation(PATH_FICHEROS_CONFIG + fileName);
+            results.forEach(System.out::println);
+        } catch (IOException e) {
+            System.err.println("Error reading file: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("Error during simulation: " + e.getMessage());
+        }
     }
-    
-    
 }
